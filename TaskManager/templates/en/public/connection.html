@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Connections</title>
+</head>
+<body>
+{{ my_var | upper }}
+<article> tag:
+    {% if years < 10 %}
+        you are a children
+    {% elif years < 18 %}
+        teenager
+    {% else %}
+        adult
+    {% endif %}
+    <ul>
+        {% for city in array_city %}
+            <li>
+                {{ city }}
+            </li>
+        {% endfor %}
+    </ul>
+</article>
+</body>
+</html>

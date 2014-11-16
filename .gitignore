@@ -2,3 +2,5 @@
 db.sqlite3
 Work_manager.iml
 Work_manager/database.db
+.idea
+*.pyc

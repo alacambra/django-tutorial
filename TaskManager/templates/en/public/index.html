@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-{{ my_var | upper }}
-<a href="{% url 'public_connection' %}">Connection</a>
-<article> tag:
-    {% if years < 10 %}
-        you are a children
-    {% elif years < 18 %}
-        teenager
-    {% else %}
-        adult
-    {% endif %}
-    <ul>
-        {% for city in array_city %}
-            <li>
-                {{ city }}
-            </li>
-        {% endfor %}
-    </ul>
-</article>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title_html %}
+    hello world title
+{% endblock %}
+{%  block h1 %}
+    {{ bloc.super }}Hello World Django
+{% endblock %}
+{% block article_content %}
+    <a href="{% url 'public_connection' %}">Connection</a>
+    Hello world!
+{% endblock %}

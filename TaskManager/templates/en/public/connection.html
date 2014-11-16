@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Connections</title>
-</head>
-<body>
-{{ my_var | upper }}
-<article> tag:
+{% extends "base.html" %}
+{% block title_html %}
+    hello world title
+{% endblock %}
+{%  block h1 %}
+    {{ bloc.super }}Hello World Django
+{% endblock %}
+{% block article_content %}
+    tag:
     {% if years < 10 %}
         you are a children
     {% elif years < 18 %}
@@ -21,6 +21,4 @@
             </li>
         {% endfor %}
     </ul>
-</article>
-</body>
-</html>
+{% endblock %}

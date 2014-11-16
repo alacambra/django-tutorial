@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'TaskManager.views.index.page', name="public_index"),
     url(r'^index$', 'TaskManager.views.index.page'),
-    url(r'^connection-TaskManager$', 'TaskManager.views.connection.page', name="public_connection"),
+    url(r'^connection$', 'TaskManager.views.connection.page', name="public_connection"),
 )

@@ -12,6 +12,9 @@ class UserProfile(models.Model):
     years_seniority = models.IntegerField(verbose_name="Seniority", default=0)
     date_created = models.DateField(verbose_name="Date of Birthday", auto_now_add=True)
 
+    def __str__(self):
+        return self.login
+
 
 class Supervisor(UserProfile):
     specialisation = models.CharField(max_length=50, verbose_name="Specialisation")
@@ -26,6 +29,9 @@ class Project(models.Model):
     description = models.CharField(max_length=1000, verbose_name="Description")
     client_name = models.CharField(max_length=1000, verbose_name="Client name")
 
+    def __str__(self):
+        return self.title
+
 
 class Task(models.Model):
     title = models.CharField(max_length=50, verbose_name="Title")
@@ -35,7 +41,11 @@ class Task(models.Model):
     project = models.ForeignKey(Project, verbose_name="Project", null=True, default=None, blank=True)
     developers = models.ManyToManyField(Developer, through="DeveloperWorkTask")
 
+    def __str__(self):
+        return self.title
+
 
 class DeveloperWorkTask(models.Model):
-    developer = models.ForeignKey(Task)
+    developer = models.ForeignKey(Developer)
+    task = models.ForeignKey(Task)
     time_elapsed_dev = models.IntegerField(verbose_name="Time elapsed", null=True, default=None, blank=True)
